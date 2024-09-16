@@ -98,7 +98,7 @@ export default defineComponent({
             localStorage.setItem("permissions", JSON.stringify(user.permissions));
             
             // Redirect to dashboard
-            router.push("/dashboard");
+            router.push("/Dashboard");
           } else {
             throw new Error("Invalid credentials");
           }

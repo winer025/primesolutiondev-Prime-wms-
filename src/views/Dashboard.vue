@@ -133,7 +133,11 @@ export default defineComponent({
     // ฟังก์ชันจัดการการคลิกที่เมนู
     const handleItemClick = (item: { name: string, permission: string, route: string }) => {
       if (hasPermission(item.permission)) {
-        router.push(item.route); // นำทางไปยัง route ที่กำหนด
+        if (item.name === 'Goods Receive') {
+          window.location.href = "http://localhost:5174/Goods-receive"; // นำทางไปยัง URL ที่กำหนด
+        } else {
+          router.push(item.route); // นำทางไปยัง route ที่กำหนด
+        }
       } else {
         alert('You do not have permission to access this module.'); // แสดงข้อความถ้าไม่มีสิทธิ์
       }
