@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "Node", // Changing to Node for better module resolution compatibility
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "preserve",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Additional Options */
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "types": ["vite/client"] // Adding Vite types for better compatibility
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue", // Ensure this pattern includes all .vue files in src and subdirectories
+    "src/router/index.ts", // Ensuring that the router file is correctly referenced if using TypeScript
+    "env.d.ts", // Include environment types for Vite if present
+    "src/views/Unauthorized.vue" // Ensure Unauthorized.vue is included
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts", // Exclude test files if not needed
+    "**/*.spec.ts" // Exclude spec files if not needed
+  ]
+}
